@@ -1,0 +1,2 @@
+实现callable接口可以 创建线程  但是创建Thread的构造方法 形参中不存在callable 接口
+
