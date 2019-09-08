@@ -10,6 +10,12 @@ public enum  ResponseEnum {
 
     private String sex;
 
+    /**
+     * 可以构造方法重载 提供多种实例
+     * @param code
+     * @param name
+     * @param sex
+     */
     ResponseEnum(Integer code, String name, String sex) {
         this.code = code;
         this.name = name;
@@ -40,6 +46,12 @@ public enum  ResponseEnum {
         this.sex = sex;
     }
 
+
+    /**
+     * 遍历
+     * @param code
+     * @return 枚举值
+     */
     public static ResponseEnum ResponseEnumForeach(Integer code){
         for (ResponseEnum responseEnum:values()){
             if (responseEnum.getCode()==code){
@@ -47,12 +59,5 @@ public enum  ResponseEnum {
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        ResponseEnum responseEnum = ResponseEnum.ResponseEnumForeach(1);
-        System.out.println(responseEnum.getSex());
-        System.out.println(responseEnum.getCode());
-        System.out.println(responseEnum.getName());
     }
 }
