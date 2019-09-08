@@ -1,7 +1,7 @@
 package com.mz.countDownLatch;
 
 public enum  ResponseEnum {
-    ONE(1,"张三","男"),TWO(2,"李四","女");
+    ONE(0,"张三","男"),TWO(1,"李四","女");
 
 
     private Integer code;
