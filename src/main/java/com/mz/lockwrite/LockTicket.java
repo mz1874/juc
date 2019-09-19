@@ -10,12 +10,20 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class LockTicket {
 
-    private Lock lock = new ReentrantLock();
+    private ReentrantLock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
+
     private int max = 0;
 
     public void jia() {
         lock.lock();
+//        判断当前的线程是否具有此锁
+//        lock.isHeldByCurrentThread();
+//        lock.getHoldCount();
+//        查询当前线程 持有此锁的次数
+//
+        //the estimated number of threads waiting for this lock
+        lock.getQueueLength();
         try {
             while (max != 0) {
                 /*休眠  释放锁*/
